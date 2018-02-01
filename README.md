@@ -25,7 +25,9 @@ The LSTM network was trained on 65 unquantized hip-hop MIDI drum loops. They are
 
 ### Installation
 
-Robokit requires a recent Java Runtime Environment (JRE) install on your machine. After this prerequisite is met, click the 'release' link near the top of this page and download the `robokit_executable` binary. Run the binary!
+Robokit requires a recent Java Runtime Environment (JRE) install on your machine. After this prerequisite is met, click the 'release' link near the top of this page and download the `robokit_executable` binary. You may need to edit the file extension to get the binary to run on your platform. `.bat` should get it running on Windows, `.sh` should do it on Unix.
+
+You can also build the binary yourself if you have the [lein] Clojure build tool installed. Clone the repository and run `lein bin` from the root directory.
 
 ### Todos
  - Expand data model to include velocity information
@@ -37,3 +39,4 @@ Robokit requires a recent Java Runtime Environment (JRE) install on your machine
 
 
    [jutsu.ai]: <https://github.com/hswick/jutsu.ai>
+   [lein]: <https://leiningen.org/>
