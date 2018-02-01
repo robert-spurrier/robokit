@@ -25,7 +25,7 @@ The LSTM network was trained on 65 unquantized hip-hop MIDI drum loops. They are
 
 ### Installation
 
-Robokit requires a recent Java Runtime Environment (JRE) install on your machine. After this prerequisite is met, clone or download this repository and run the `robokit_executable` file located in the root directory.
+Robokit requires a recent Java Runtime Environment (JRE) install on your machine. After this prerequisite is met, click the 'release' link near the top of this page and download the `robokit_executable` binary. Run the binary!
 
 ### Todos
  - Expand data model to include velocity information
