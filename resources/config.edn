@@ -1,0 +1,43 @@
+{:model "model/robokit_model_250_1000"
+ :midi-mappings {:input {28 0
+                         34 0
+                         35 0
+                         36 1
+                         37 1
+                         39 1
+                         38 2
+                         45 3
+                         53 3
+                         41 4
+                         43 4
+                         44 4
+                         46 4
+                         51 4
+                         54 4
+                         42 5
+                         40 6
+                         47 7
+                         48 7
+                         55 7
+                         56 7
+                         63 7}
+                 :output {0 28
+                          1 36
+                          2 38
+                          3 45
+                          4 41
+                          5 42
+                          6 40
+                          7 47}}
+ :network [:optimization-algo :sgd 
+           :learning-rate 0.01
+           :weight-init :xavier
+           ;;:updater (org.deeplearning4j.nn.conf.Updater/ADAM)
+           :updater :rmsprop
+           :mini-batch true
+           :layers
+           [[:graves-lstm [:n-in 8 :n-out 64 :activation :tanh]]           
+            [:rnn-output :mcxent [:n-in 64 :n-out 256 :activation :softmax]]]
+           :backprop true
+           :pretrain false]} 
+
