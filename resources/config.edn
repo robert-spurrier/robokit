@@ -1,22 +1,22 @@
 {:model "model/robokit_model_250_1000"
- :midi-mappings {:input {28 0
+ :midi-mappings {:input {28 0 ;; kick
                          34 0
                          35 0
-                         36 1
+                         36 1 ;; snare
                          37 1
                          39 1
-                         38 2
-                         45 3
+                         38 2 ;; clap
+                         45 3 ;; hi-hat open
                          53 3
-                         41 4
+                         41 4 ;; hi-hat closed
                          43 4
                          44 4
                          46 4
                          51 4
                          54 4
-                         42 5
-                         40 6
-                         47 7
+                         42 5 ;; claves
+                         40 6 ;; cowbell
+                         47 7 ;; crash
                          48 7
                          55 7
                          56 7
