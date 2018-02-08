@@ -1,3 +1,4 @@
+
 # Robokit
 
 [![robokit](https://i.imgur.com/fVCKnIH.jpg)](https://i.imgur.com/fVCKnIH.jpg)
@@ -21,7 +22,11 @@ The LSTM network was trained on 65 unquantized hip-hop MIDI drum loops. They are
 
 ### Usage
 
- A simple GUI interface is provided that allows the user to generate random hip-hop MIDI drum loops by sampling from the network. 
+ A simple GUI interface is provided that allows the user to generate random hip-hop MIDI drum loops by sampling from the network.
+ If you're not already comfortable with music software that can play the MIDI files, [Ableton Live Lite] will do the trick.
+ Just open a drum rack in Ableton and drag the MIDI file onto the corresponding track. The MIDI notes output by robokit are already 
+ mapped to the positions the drum rack expects. You should just need to press play. You may want to quantize to 16th notes
+ to make it sound a little cleaner; robokit's network was trained on unquantized input.
 
 ### Installation
 
@@ -40,3 +45,4 @@ You can also build the binary yourself if you have the [lein] Clojure build tool
 
    [jutsu.ai]: <https://github.com/hswick/jutsu.ai>
    [lein]: <https://leiningen.org/>
+   [Ableton Live Lite]: <https://www.ableton.com/en/products/live-lite/>

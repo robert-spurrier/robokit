@@ -77,8 +77,7 @@
 (defn sample-distribution
   "Pick the next drum step by sampling from the softmax layer output probabilities:
    1. Locate the CDF value that is less than or equal to a randomly chosen threshold.
-   2. Return the category (index) corresponding to that CDF value.
-   TODO: implement the Gumbel sampling method to do this as well."
+   2. Return the category (index) corresponding to that CDF value."
   [distribution rng]
   (let [threshold (.nextDouble rng)
         length (count distribution)]
@@ -112,16 +111,14 @@
   "Returns a function that generates a random drum sequence and saves to a file."
   [midi-mappings-output model]
   (fn [e]
-    (let [[x y] (sm/location)
-          seed (+ x y)
-          rng (java.util.Random. seed)
+    (let [rng (java.util.Random.)
           primer-index (.nextInt rng 256)
           primer [(category->vector primer-index)]]
-      (-> (generate-sequence model rng primer 768)
+      (-> (generate-sequence model rng primer 1536)
           ((partial decoded-sequence midi-mappings-output))
-          (midi/write-midi-sequence! (str "robokit_midi_seed_" seed
-                                      "_primer_" primer-index
-                                      ".mid"))))))
+          (midi/write-midi-sequence! (str "robokit_midi"
+                                          "_primer_" primer-index
+                                          ".mid"))))))
 
 (defn -main
   "Load the model and present a simple push-button GUI."
@@ -134,7 +131,9 @@
                    (ai/load-model))
         gui-frame (sc/frame :title "Robokit")
         gui-button (sc/button :text "Generate!")]
-    (sc/listen gui-button :action (random-drum-sequence-fn midi-mappings-output model))
+    (sc/listen gui-button :action (random-drum-sequence-fn
+                                   midi-mappings-output
+                                   model))
     (sc/config! gui-frame :content gui-button)
     (sc/config! gui-frame :size [300 :by 100])
-    (-> gui-frame sc/show!)))
+    (sc/show! gui-frame)))

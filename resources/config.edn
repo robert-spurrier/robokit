@@ -21,14 +21,14 @@
                          55 7
                          56 7
                          63 7}
-                 :output {0 28
-                          1 36
-                          2 38
-                          3 45
-                          4 41
-                          5 42
-                          6 40
-                          7 47}}
+                 :output {0 36 ;; kick
+                          1 38 ;; snare
+                          2 39 ;; clap
+                          3 46 ;; hi-hat open
+                          4 42 ;; hi-hat closed
+                          5 38 ;; claves
+                          6 51 ;; cowbell
+                          7 49}} ;; crash
  :network [:optimization-algo :sgd 
            :learning-rate 0.01
            :weight-init :xavier
